@@ -56,21 +56,21 @@ function ToDo({ text, category, id }: IToDo) {
   return (
     <li>
       <span>{text}</span>
+      {category !== Categories.TO_DO && (
+        <Btn name={Categories.TO_DO} onClick={onClick}>
+          ❌
+        </Btn>
+      )}
+
       {category !== Categories.DOING && (
         <Btn name={Categories.DOING} onClick={onClick}>
           ✅
         </Btn>
       )}
 
-      {category !== Categories.TO_DO && (
-        <Btn name={Categories.TO_DO} onClick={onClick}>
-          👎🏻
-        </Btn>
-      )}
-
       {category !== Categories.DONE && (
         <Btn name={Categories.DONE} onClick={onClick}>
-          ❌
+          👍🏻
         </Btn>
       )}
     </li>
